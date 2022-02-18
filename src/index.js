@@ -1,13 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';
 
-const [first, second] = ["dummy", "big dummy", "meathead"]
+function App() {
+  const [checked, setChecked] = useState(false);
+  return (
+    <div>
+      <input type="checkbox" value = {checked} onChange={() => setChecked(!checked)} />
+      <p>{checked ? "checked" : "not checked"}</p>
+    </div>
+  )
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App name={second} />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
